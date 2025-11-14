@@ -1,0 +1,14 @@
+.ipynb_checkpoints
+nbenv/
+venv/
+ENV/
+env/
+.env/
+.venv/
+venv-*/
+.virtualenv/
+.virtualenvs/
+**/venv/
+**/.venv/
+__pycache__/
+saved_models/
