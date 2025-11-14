@@ -11,4 +11,3 @@ venv-*/
 **/venv/
 **/.venv/
 __pycache__/
-saved_models/
