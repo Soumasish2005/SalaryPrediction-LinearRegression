@@ -1,6 +1,18 @@
-# SalaryPrediction-LinearRegression
+# Salary Prediction using Linear Regression
 
-Project to predict employee salaries using supervised regression models and ensemble techniques (Linear Regression, Random Forest, Gradient Boosting, Voting Regressor). The project demonstrates end-to-end steps: data loading, cleaning, encoding, training, evaluation, visualization, and saving the best model.
+This project builds a Machine Learning model to predict employee salaries using a Kaggle dataset that includes features such as job title, experience, education level, company size, industry, and location.
+The data has been cleaned, preprocessed, and encoded, and multiple regression models are trained to understand which factors influence salary.
+
+To improve accuracy, the project implements ensemble learning techniques including:
+
+- Random Forest Regressor
+
+- Gradient Boosting Regressor
+
+- Voting Regressor (combines multiple models)
+
+Each model is evaluated using metrics like **MSE**, **RMSE**, and **R²** score, and the best-performing model is saved for future predictions.
+Overall, the project demonstrates how machine learning can be used to make data-driven salary predictions using real-world job market data.
 
 ## Key Features
 - Data cleaning and simple feature engineering
@@ -22,9 +34,12 @@ Recommended: use the provided dev container (Ubuntu 24.04). From the project roo
 1. Create or activate a Python environment:
    - ```python -m venv nbenv && source nbenv/bin/activate```
 
-2. Start the Jupyter notebook:
-   - ```jupyter notebook```
-   - or open the notebook file: `Salary_Prediction_v1.ipynb`
+2. Install dependencies:
+   - ```pip install -r requirements.txt```
+
+3. Start the Streamlit app:
+   - ```streamlit run app.py```
+   - or open the notebook file to see model related code: `Salary_Prediction_v1.ipynb`
 
 ## Usage
 - Open `Salary_Prediction_v1.ipynb` and run cells sequentially.
@@ -49,6 +64,7 @@ pred = model.predict(X_new)
 
 ## Evaluation & Visuals
 The notebook outputs:
+
 - A summary table of model metrics (MSE, RMSE, MAE, R²)
 - Correlation heatmap for feature analysis
 - Actual vs Predicted plot for the best model
@@ -57,19 +73,18 @@ The notebook outputs:
 
 ## Project Structure
 - Salary_Prediction_v1.ipynb    — Main analysis and training notebook
-- Salary Data.csv               — Input dataset (not included in repo)
+- Salary Data.csv               — Input dataset (included in repo)
 - saved_models/                 — Directory to store the serialized best model
 - README.md                     — This file
 
-## Recommendations / Next Steps
-- Add a requirements.txt or environment.yml for reproducibility.
+## Next Steps
+
 - Persist LabelEncoders and preprocessing pipeline (e.g., with sklearn.pipeline) to ensure consistent inference transformations.
 - Perform cross-validation and hyperparameter tuning (GridSearchCV / RandomizedSearchCV).
 - Expand feature engineering (text/vector features for job titles, location encoding, experience bucketing).
 - Consider model explainability tools (SHAP/LIME) for feature impact analysis.
 
-## Contributing
-Contributions are welcome. Please open an issue or submit a pull request with a clear description of changes.
 
 ## License
-Add a license file (e.g., MIT) that suits your project's needs. If using Kaggle or third-party datasets, ensure compliance with their license and attribution requirements.
+- This project is licensed under the GNU General Public License v3.0 (GPL-3.0). See the LICENSE file for the full license text.
+- If using third-party datasets (for example from Kaggle), ensure you comply with their license and attribution requirements; dataset licenses may differ from the project's code license.
