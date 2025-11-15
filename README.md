@@ -20,16 +20,16 @@ Overall, the project demonstrates how machine learning can be used to make data-
 - Multiple regressors: Linear Regression, Random Forest, Gradient Boosting
 - Model ensembling with Voting Regressor
 - Model evaluation (MSE, RMSE, MAE, R²)
+- Best model score: 0.97(Random Forest)
 - Visualizations: correlation heatmap, actual vs predicted, feature importances
-- Save best-performing model for deployment
+- Saves best-performing model for deployment
 
 ## Dataset
-The notebook expects a CSV named `Salary Data.csv` placed in the project root. The dataset should include salary and predictive features such as job title, experience, education, location, etc.
-
-(If dataset originated from Kaggle, ensure you follow the dataset's license and attribution requirements.)
+The notebook contains a CSV named `Salary Data.csv` placed in the project root. The dataset includes salary and predictive features such as job title, experience, education, location, etc.
 
 ## Quickstart / Setup
-Recommended: use the provided dev container (Ubuntu 24.04). From the project root:
+
+From the project root:
 
 1. Create or activate a Python environment:
    - ```python -m venv nbenv && source nbenv/bin/activate```
@@ -46,14 +46,11 @@ Recommended: use the provided dev container (Ubuntu 24.04). From the project roo
 - The notebook:
   - Loads `Salary Data.csv`
   - Drops missing values
-  - Encodes categorical columns with LabelEncoder (saved encoders in-memory)
-  - Splits data into train/test
-  - Trains models and selects the best by R²
-  - Saves the best model to `./saved_models/best_salary_model.joblib`
+  - Encodes categorical columns with LabelEncoder (saves encoders as well)
+  - Splits data into train/test(80/20)
+  - Trains models and selects the best by R2 score
+  - Saves the best model to `./saved_models` as `best_salary_model.joblib`
   - Displays evaluation metrics and plots
-
-Example: after training the best model is saved as:
-- `./saved_models/best_salary_model.joblib`
 
 You can load it for inference:
 ```python
@@ -65,16 +62,30 @@ pred = model.predict(X_new)
 ## Evaluation & Visuals
 The notebook outputs:
 
-- A summary table of model metrics (MSE, RMSE, MAE, R²)
+- A summary table of model metrics (MSE, RMSE, MAE, R2)
 - Correlation heatmap for feature analysis
 - Actual vs Predicted plot for the best model
-- Barplot comparison of R² across models
+- Barplot comparison of R2 across models
 - Feature importances for Random Forest (if trained)
+
+<table>
+   <tr>
+      <td align="center"><img src="./visualizations/heatmap.png" alt="Plot 1" width="350"></td>
+      <td align="center"><img src="./visualizations/model_scores.png" alt="Plot 2" width="350"></td>
+   </tr>
+   <tr>
+      <td align="center"><img src="./visualizations/model_pred_!.png" alt="Plot 3" width="350"></td>
+      <td align="center"><img src="./visualizations/model_pred_2.png" alt="Plot 4" width="350"></td>
+   </tr>
+</table>
 
 ## Project Structure
 - Salary_Prediction_v1.ipynb    — Main analysis and training notebook
 - Salary Data.csv               — Input dataset (included in repo)
-- saved_models/                 — Directory to store the serialized best model
+- app.py                        — Streamlit GUI
+- requirements.txt              — Requirements for the project
+- saved_models/                 — Directory to store the best model
+- saved_encoders/               — Directory to store the best encoder
 - README.md                     — This file
 
 ## Next Steps
