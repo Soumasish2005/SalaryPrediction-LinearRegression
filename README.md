@@ -14,6 +14,16 @@ To improve accuracy, the project implements ensemble learning techniques includi
 Each model is evaluated using metrics like **MSE**, **RMSE**, and **R²** score, and the best-performing model is saved for future predictions.
 Overall, the project demonstrates how machine learning can be used to make data-driven salary predictions using real-world job market data.
 
+## Project Structure
+- Salary_Prediction_v1.ipynb    — Main analysis and training notebook
+- Salary Data.csv               — Input dataset (included in repo)
+- app.py                        — Streamlit GUI
+- requirements.txt              — Requirements for the project
+- saved_models/                 — Directory to store the best model
+- saved_encoders/               — Directory to store the best encoder
+- visualizations/               — Directory to store the best ppt and visualizations
+- README.md                     — This file
+
 ## Key Features
 - Data cleaning and simple feature engineering
 - Label encoding for categorical fields
@@ -78,15 +88,6 @@ The notebook outputs:
       <td align="center"><img src="./visualizations/model_pred_2.png" alt="Plot 4" width="350"></td>
    </tr>
 </table>
-
-## Project Structure
-- Salary_Prediction_v1.ipynb    — Main analysis and training notebook
-- Salary Data.csv               — Input dataset (included in repo)
-- app.py                        — Streamlit GUI
-- requirements.txt              — Requirements for the project
-- saved_models/                 — Directory to store the best model
-- saved_encoders/               — Directory to store the best encoder
-- README.md                     — This file
 
 ## Next Steps
 
